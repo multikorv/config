@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+
 local indent = 4
 
 vim.opt.termguicolors = true
