@@ -12,9 +12,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    "lewis6991/gitsigns.nvim",
     "hrsh7th/nvim-cmp",
     "neovim/nvim-lspconfig",
     "nvim-lua/plenary.nvim",
+    "famiu/feline.nvim",
     --"folke/tokyonight.nvim",
     { 
         "rose-pine/neovim", 

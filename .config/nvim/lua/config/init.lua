@@ -6,5 +6,8 @@ require("config.lazy")
 require("config.treesitter")
 require("config.telescope")
 require("config.lsp")
+require("config.cmp")
 
 require("config.feel")
+require("config.gitsigns")
+require("config.feline")
