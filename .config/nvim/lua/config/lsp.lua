@@ -1,18 +1,34 @@
+local lsp_config = require('lspconfig')
 
-require("lspconfig").tsserver.setup({})
-require("lspconfig").pyright.setup({})
-require("lspconfig").rust_analyzer.setup {
+lsp_config.tsserver.setup({})
+lsp_config.pyright.setup({})
+lsp_config.lua_ls.setup({})
+
+-- TODO: Make plaform/env agnostic
+local pid = vim.fn.getpid()
+local omnisharp_bin = '/home/mutanton/.local/share/nvim/mason/packages/omnisharp-mono/run'
+lsp_config.omnisharp_mono.setup({
+    --[[
+    flags = {
+        debounce_text_changes = 150
+    },
+    ]]--
+    cmd = { omnisharp_bin, '--languageserver', '--hostPID', tostring(pid) };
+    --root_dir = lsp_config.util.root_pattern('*.csproj', '*.sln');
+})
+
+lsp_config.rust_analyzer.setup({
     settings = {
-        ["rust-analyzer"] = {
+        ['rust-analyzer'] = {
             check = {
-                command = "clippy";
+                command = 'clippy';
             },
             diagnostics = {
                 enable = true;
             }
         }
     }
-}
+})
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
