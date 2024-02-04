@@ -18,10 +18,17 @@ require('lazy').setup({
         lazy = false 
     },
     'lewis6991/gitsigns.nvim',
-    'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-vsnip',
-    'hrsh7th/vim-vsnip',
+    'hrsh7th/cmp-nvim-lsp',
+    {
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp"
+    },
+    --'hrsh7th/cmp-vsnip',
+    --'hrsh7th/vim-vsnip',
     'neovim/nvim-lspconfig',
     'nvim-lua/plenary.nvim',
     'famiu/feline.nvim',
