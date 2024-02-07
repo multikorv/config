@@ -1,3 +1,8 @@
 --vim.loader.enable()
 
-require("config")
+if vim.g.vscode then
+    -- VSCode extension
+else
+    require("environment")
+    require("config")
+end

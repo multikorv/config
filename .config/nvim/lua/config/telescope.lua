@@ -7,13 +7,10 @@ vim.keymap.set('n', '<leader>tf', builtin.find_files, {})
     builtin.find_files({ search_dirs = {'~/.config/nvim'} })
 end, {})]]--
 
-
-
 vim.keymap.set('n', '<leader>tg', builtin.git_files, {})
 vim.keymap.set('n', '<leader>tb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>ts', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
-
 
 -- open file_browser with the path of the current buffer
 vim.api.nvim_set_keymap(
@@ -23,10 +20,12 @@ vim.api.nvim_set_keymap(
   { noremap = true }
 )
 
+print (CONFIG_FILES)
 -- open file_browser over nvim config files
 vim.api.nvim_set_keymap(
   'n',
   '<leader>tc',
-  ':Telescope file_browser path=~/.config/nvim select_buffer=true<CR>',
+  --':Telescope file_browser path=~/.config/nvim select_buffer=true<CR>',
+  ':Telescope file_browser path=' .. CONFIG_FILES .. ' select_buffer=true<CR>',
   { noremap = true }
 )
