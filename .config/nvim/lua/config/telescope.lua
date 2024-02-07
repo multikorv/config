@@ -20,7 +20,6 @@ vim.api.nvim_set_keymap(
   { noremap = true }
 )
 
-print (CONFIG_FILES)
 -- open file_browser over nvim config files
 vim.api.nvim_set_keymap(
   'n',
