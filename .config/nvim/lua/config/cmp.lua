@@ -69,6 +69,6 @@ require('lspconfig')['rust_analyzer'].setup({
     capabilities = capabilities
 })
 
-require('lspconfig')['omnisharp_mono'].setup({
+require('lspconfig')['omnisharp'].setup({
     capabilities = capabilities
 })

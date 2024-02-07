@@ -5,16 +5,25 @@ lsp_config.pyright.setup({})
 lsp_config.lua_ls.setup({})
 
 -- TODO: Make plaform/env agnostic
-local pid = vim.fn.getpid()
-local omnisharp_bin = '/home/mutanton/.local/share/nvim/mason/packages/omnisharp-mono/run'
-lsp_config.omnisharp_mono.setup({
+-- only work from powershell
+--local pid = vim.fn.getpid()
+--local omnisharp_bin = '/home/mutanton/.local/share/nvim/mason/packages/omnisharp-mono/run'
+lsp_config.omnisharp.setup({
     --[[
     flags = {
         debounce_text_changes = 150
     },
     ]] --
-    cmd = { omnisharp_bin, '--languageserver', '--hostPID', tostring(pid) },
+    --cmd = { omnisharp_bin, '--languageserver', '--hostPID', tostring(pid) },
     --root_dir = lsp_config.util.root_pattern('*.csproj', '*.sln');
+    cmd = {
+        'mono',
+        '--assembly-loader=strict',
+        'OmniSharp.exe',
+    },
+    --root_dir = lsp_config.util.root_pattern('*.csproj', '*.sln');
+    --on_attach = on_attach,
+    use_mono = true,
 })
 
 lsp_config.rust_analyzer.setup({
