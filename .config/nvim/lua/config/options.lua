@@ -33,6 +33,9 @@ vim.opt.listchars = {
   precedes = '<'
 }
 
+
+vim.filetype.add({ extension = { p8 = "pico8" } })
+
 --[[
 vim.opt.laststatus = 3
 vim.opt.fillchars:append({
