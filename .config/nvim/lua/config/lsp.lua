@@ -3,6 +3,7 @@ local lsp_config = require('lspconfig')
 lsp_config.tsserver.setup({})
 lsp_config.pyright.setup({})
 lsp_config.lua_ls.setup({})
+lsp_config.pico8_ls.setup({})
 
 -- TODO: Make plaform/env agnostic
 -- only work from powershell
