@@ -27,8 +27,6 @@ require('lazy').setup({
         -- install jsregexp (optional!).
         build = "make install_jsregexp"
     },
-    --'hrsh7th/cmp-vsnip',
-    --'hrsh7th/vim-vsnip',
     'neovim/nvim-lspconfig',
     'nvim-lua/plenary.nvim',
     'famiu/feline.nvim',
