@@ -20,6 +20,9 @@ require('lazy').setup({
     'lewis6991/gitsigns.nvim',
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-cmdline',
+    'dmitmel/cmp-cmdline-history',
     {
         "L3MON4D3/LuaSnip",
         -- follow latest release.
