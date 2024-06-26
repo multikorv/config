@@ -12,17 +12,31 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+    -- Common dependency
+    'nvim-lua/plenary.nvim',
+    {
+        'nvim-treesitter/nvim-treesitter', 
+        build = ':TSUpdate'
+    },
+
+    -- Mason is essentially core and is used heavily together wiht LSP
     'williamboman/mason.nvim',
     {
         'williamboman/mason-lspconfig.nvim', 
         lazy = false 
     },
+
+    -- Git stuff
     'lewis6991/gitsigns.nvim',
+
+    -- CMP and related plugins
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-cmdline',
     'dmitmel/cmp-cmdline-history',
+
+    -- Snippet engine for lua
     {
         "L3MON4D3/LuaSnip",
         -- follow latest release.
@@ -30,17 +44,17 @@ require('lazy').setup({
         -- install jsregexp (optional!).
         build = "make install_jsregexp"
     },
+
+    -- LSP - essential obviously
     'neovim/nvim-lspconfig',
-    'nvim-lua/plenary.nvim',
+
+    -- Status line
     'famiu/feline.nvim',
-    'folke/tokyonight.nvim',
-    { 
-        'rose-pine/neovim', 
-        name = 'rose-pine' 
-    },
+
+    -- Telescope fuzzy finder is essential
     {
         'nvim-telescope/telescope.nvim', 
-        tag = '0.1.5', 
+        tag = '0.1.8', 
         dependencies = 
         { 
             'nvim-lua/plenary.nvim' 
@@ -54,8 +68,10 @@ require('lazy').setup({
             'nvim-lua/plenary.nvim' 
         }
     },
-    {
-        'nvim-treesitter/nvim-treesitter', 
-        build = ':TSUpdate'
+    -- Themes, colors and feel
+    'folke/tokyonight.nvim',
+    { 
+        'rose-pine/neovim', 
+        name = 'rose-pine' 
     }
 })
